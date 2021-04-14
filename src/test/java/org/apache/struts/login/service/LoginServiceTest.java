@@ -7,5 +7,6 @@ public class LoginServiceTest extends StrutsTestCase {
     @Test
     public void testConnection() throws Exception {
         LoginService service = new LoginService();
+        service.getConnection();
     }
 }

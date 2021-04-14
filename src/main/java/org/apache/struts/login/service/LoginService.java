@@ -10,14 +10,14 @@ import java.sql.ResultSet;
 public class LoginService {
     private static final String URL = "jdbc:mysql://localhost/authentication";
     private static final String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
-    public Connection conn;
 
-    public LoginService() throws Exception {
+    public Connection getConnection() throws Exception {
         Class.forName(DRIVER_CLASS);
-        conn = DriverManager.getConnection(URL, "testing", "password");
+        return DriverManager.getConnection(URL, "testing", "password");
     }
 
     public boolean authenticate(Person person) throws Exception {
+        Connection conn = getConnection();
         String sql = "SELECT * FROM account WHERE username = ? AND password = ?";
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setString(1, person.getUsername());

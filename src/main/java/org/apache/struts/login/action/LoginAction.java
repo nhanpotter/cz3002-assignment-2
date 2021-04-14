@@ -16,7 +16,7 @@ public class LoginAction extends ActionSupport {
         }
 
         try {
-            LoginService service = new LoginService();
+            LoginService service = this.makeLoginService();
             if (service.authenticate(person)) {
                 return SUCCESS;
             }
@@ -30,14 +30,23 @@ public class LoginAction extends ActionSupport {
         return INPUT;
     }
 
+    public LoginService makeLoginService() {
+        return new LoginService();
+    }
+
+    /**
+     * validate() validate user's input on form. If any errors have been added
+     * then Struts 2 will not proceed to call the execute method. Rather the
+     * Struts 2 framework will return input as the result of calling the action.
+     */
     public void validate() {
         if (person == null) {
             return;
         }
-        if (person.getUsername().length() == 0) {
+        if (person.getUsername() == null || person.getUsername().length() == 0) {
             addFieldError("person.username", "Username is required.");
         }
-        if (person.getPassword().length() == 0) {
+        if (person.getPassword() == null || person.getPassword().length() == 0) {
             addFieldError("person.password", "Password is required.");
         }
     }
