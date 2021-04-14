@@ -1,6 +1,5 @@
 package org.apache.struts.login.service;
 
-import org.apache.struts.example.Login;
 import org.apache.struts.login.model.Person;
 
 import java.sql.Connection;
