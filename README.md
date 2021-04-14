@@ -1,13 +1,13 @@
 # Group 32 CZ3002 assignment 2
 
-## Prerequisites
+## Installation
 
 - Install Maven (<https://maven.apache.org/install.html>)
 - Install Apache Tomcat (<https://www3.ntu.edu.sg/home/ehchua/programming/howto/Tomcat_HowTo.html>)
 - Install MySQL (<https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/>) 
   and run MySQL server. 
 
-## Instructions to run
+## User Manual
 
 1. Navigate to project root
 2. Run these database scripts in the command prompt
